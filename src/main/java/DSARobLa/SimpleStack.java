@@ -25,6 +25,7 @@ public class SimpleStack {
 
     //push increments top first then assigns value to that index of a[] 
     //now top stores the index of the top value in the array
+    //O(1)
     public void push(int value) {
         this.a[++top] = value;
     }
@@ -32,6 +33,7 @@ public class SimpleStack {
     //pop() returns the value at the top of the array and then decrements 
     //top so that if peek is ever called we can only see the value at top - 1
     //essentially the value still exists but is inaccessable 
+    //O(1)
     public int pop() {
         return this.a[top--];
     }
