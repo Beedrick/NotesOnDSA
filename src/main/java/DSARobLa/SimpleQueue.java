@@ -26,12 +26,12 @@ public class SimpleQueue {
 
     }
 
-    public void insert(int value) {
-        if(rear == maxSize - 1) {
-            rear = -1;
+    public void insert(int value) { 
+        if(rear == maxSize - 1) {                   // if() statement checks if rear is pointing at the top of the queue 
+            rear = -1;                                     // if it is then set rear = -1 returning the rear index to the bottom
         }
-        this.nums[++rear] = value;
-        ++this.nElems;
+        this.nums[++rear] = value;              //if the above if() statement was true the rear index will increment to 0 (beginning of the queue) and stores the value there
+        ++this.nElems;                                // number of elements is incremented
     }
 
     public int peek() {
