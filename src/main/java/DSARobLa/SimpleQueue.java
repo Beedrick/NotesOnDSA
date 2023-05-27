@@ -27,7 +27,7 @@ public class SimpleQueue {
     }
 
     public void insert(int value) {                //insert statement doesnt deal with a full queue only when the rear index reaches the top of the queue should implement something
-        if(rear == maxSize - 1) {                   // if() statement checks if rear is pointing at the top of the queue 
+        if (rear == maxSize - 1) {                   // if() statement checks if rear is pointing at the top of the queue 
             rear = -1;                                     // if it is then set rear = -1 returning the rear index to the bottom
         }
         this.nums[++rear] = value;              //if the above if() statement was true the rear index will increment to 0 (beginning of the queue) and stores the value there
@@ -37,53 +37,56 @@ public class SimpleQueue {
     public int peek() {
         return this.nums[front];                  //returns the element stored at the front of the queue
     }
-    
-    public int remove(){
+
+    public int remove() {
         int temp = nums[front++];           //stores the element at the front of queue to temp variable and then increments the front index
-        if(front == maxSize){                   // if the front index is pointing at the top of the queue it is reset to 0
+        if (front == maxSize) {                   // if the front index is pointing at the top of the queue it is reset to 0
             front = 0;
         }
         nElems--;                                   //number of elements is decremented
         return temp;                               //method returns the removed element
     }
-    
-    public boolean isEmpty(){
+
+    public boolean isEmpty() {
         return (this.nElems == 0);
     }
-    
-    public int peekFront(){
+
+    public int peekFront() {
         return this.nums[front];
     }
-    
-    public boolean isFull(){
+
+    public boolean isFull() {
         return (nElems == maxSize);
     }
-    
-    public int size(){
+
+    public int size() {
         return this.nElems;
     }
-    
+
     public static void main(String[] args) {
-        
+
         SimpleQueue sQ = new SimpleQueue(10);
-        
+
         sQ.insert(4);
         sQ.insert(5);
         sQ.insert(6);
         sQ.insert(7);
         sQ.insert(8);
         sQ.insert(9);
-        
-        while(!sQ.isEmpty()){
+        sQ.insert(4);
+        sQ.insert(5);
+        sQ.insert(6);
+        sQ.insert(7);
+        sQ.insert(8);
+        sQ.insert(9);
+
+        while (!sQ.isEmpty()) {
             int n = sQ.remove();
             System.out.println(n + " ");
         }
-        
-        
+
         System.out.println(sQ);
-        
-        
-        
+
     }
 
 }
