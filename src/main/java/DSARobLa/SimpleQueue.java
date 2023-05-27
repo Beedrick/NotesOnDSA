@@ -26,7 +26,7 @@ public class SimpleQueue {
 
     }
 
-    public void insert(int value) { 
+    public void insert(int value) {                //insert statement doesnt deal with a full queue only when the rear index reaches the top of the queue should implement something
         if(rear == maxSize - 1) {                   // if() statement checks if rear is pointing at the top of the queue 
             rear = -1;                                     // if it is then set rear = -1 returning the rear index to the bottom
         }
@@ -35,16 +35,16 @@ public class SimpleQueue {
     }
 
     public int peek() {
-        return this.nums[front];
+        return this.nums[front];                  //returns the element stored at the front of the queue
     }
     
     public int remove(){
-        int temp = nums[front++];
-        if(front == maxSize){
+        int temp = nums[front++];           //stores the element at the front of queue to temp variable and then increments the front index
+        if(front == maxSize){                   // if the front index is pointing at the top of the queue it is reset to 0
             front = 0;
         }
-        nElems--;
-        return temp;
+        nElems--;                                   //number of elements is decremented
+        return temp;                               //method returns the removed element
     }
     
     public boolean isEmpty(){
