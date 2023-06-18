@@ -28,17 +28,17 @@ public class SelectionSort {
 
         for (int inner = 0; inner < nElem; ++inner) {
             int minIndex = inner;
-            
-            for(int outer = inner + 1; outer < nElem; ++outer){
-                if(this.a[minIndex] > this.a[outer]){
+
+            for (int outer = inner + 1; outer < nElem; ++outer) {
+                if (this.a[minIndex] > this.a[outer]) {
                     minIndex = outer;
                 }
             }
-            
+
             int temp = this.a[inner];
             this.a[inner] = this.a[minIndex];
             this.a[minIndex] = temp;
-            
+
         }
 
     }
